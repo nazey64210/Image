@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Image plein écran</title>
   <style>
     html, body {
@@ -12,22 +13,24 @@
       width: 100%;
       overflow: hidden;
       background-color: #000;
+      -webkit-text-size-adjust: 100%;
     }
     a, img {
       display: block;
-      height: 100vh;
+      /* units modernes -> couvre mieux sur iOS récents */
+      height: 100svh;
       width: 100vw;
     }
     img {
-      object-fit: cover; /* Remplit tout l’écran */
-      border: none;
+      object-fit: cover;      /* remplit l’écran */
+      border: 0;
       -webkit-user-drag: none;
       user-select: none;
     }
   </style>
 </head>
 <body>
-  <!-- Quand on clique sur l’image, ça ouvre votre lien GitHub -->
+  <!-- Clique = ouvre ton lien GitHub -->
   <a href="https://github.com/TON_COMPTE" target="_blank" rel="noopener noreferrer">
     <img src="ABC.JPEG" alt="Lien GitHub">
   </a>
