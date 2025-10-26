@@ -2,25 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Image plein écran</title>
   <style>
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
       width: 100%;
       overflow: hidden;
       background-color: #000;
     }
-
-    /* Image plein écran */
     img {
-      height: 100vh;
+      height: 100svh; /* mieux sur iOS récents */
       width: 100vw;
       object-fit: cover;
-      border: none;
+      border: 0;
       -webkit-user-drag: none;
       user-select: none;
       display: block;
@@ -28,9 +24,8 @@
   </style>
 </head>
 <body>
-  <!-- L'image entière est cliquable et mène à www.zeyro.eus -->
-  <a href="https://www.zeyro.eus" target="_blank" rel="noopener noreferrer">
-    <img src="ABCD.jpg" alt="www.zeyro.eus">
+  <a href="https://www.zeyro.eus" rel="noopener noreferrer">
+    <img src="ABCD.jpg" alt="">
   </a>
 </body>
 </html>
