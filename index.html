@@ -13,26 +13,47 @@
       width: 100%;
       overflow: hidden;
       background-color: #000;
-      -webkit-text-size-adjust: 100%;
+      font-family: Arial, Helvetica, sans-serif;
     }
+
     a, img {
       display: block;
-      /* units modernes -> couvre mieux sur iOS récents */
-      height: 100svh;
+      height: 100vh;
       width: 100vw;
     }
+
     img {
-      object-fit: cover;      /* remplit l’écran */
-      border: 0;
+      object-fit: cover;
+      border: none;
       -webkit-user-drag: none;
       user-select: none;
+    }
+
+    /* ---- Lien www.zeyro.eus ---- */
+    .footer-link {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #007bff; /* bleu standard */
+      text-decoration: underline;
+    }
+
+    .footer-link:active {
+      color: #004a99; /* bleu plus foncé quand on clique */
     }
   </style>
 </head>
 <body>
-  <!-- Clique = ouvre ton lien GitHub -->
+  <!-- Image plein écran -->
   <a href="https://github.com/TON_COMPTE" target="_blank" rel="noopener noreferrer">
     <img src="ABC.JPEG" alt="Lien GitHub">
+  </a>
+
+  <!-- Lien bleu souligné -->
+  <a href="https://www.zeyro.eus" target="_blank" class="footer-link">
+    www.zeyro.eus
   </a>
 </body>
 </html>
