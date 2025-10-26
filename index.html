@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Image plein écran</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: #000;
+    }
+    a, img {
+      display: block;
+      height: 100vh;
+      width: 100vw;
+    }
+    img {
+      object-fit: cover;
+      border: none;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/TON_COMPTE" target="_blank">
+    <img src="https://picsum.photos/1080/1920" alt="Lien GitHub">
+  </a>
+</body>
+</html>
