@@ -1,84 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidéo plein écran</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidéo plein écran</title>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      overflow: hidden;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
 
-    .video-wrapper {
-      position: fixed;
-      inset: 0;
-    }
+.video-wrapper {
+  position: fixed;
+  inset: 0;
+}
 
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;          /* S’adapte à TOUS les écrans */
-      object-position: center;
-      background: black;
-    }
+video {
+  width: 50%;
+  height: 50%;
+  object-fit: contain; /* ✅ AUCUNE DÉFORMATION */
+  background: black;
+}
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      background: rgba(0,0,0,0.4);
-      z-index: 2;
-    }
-
-    .play-btn {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      color: black;
-    }
-  </style>
+#start {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+</style>
 </head>
 
 <body>
 
 <div class="video-wrapper">
-  <video id="video" loop playsinline>
+  <video id="vid" controls playsinline>
     <source src="kkkkk.mp4" type="video/mp4">
   </video>
-
-  <div class="overlay" id="overlay">
-    <div class="play-btn">▶</div>
-  </div>
+  <div id="start">▶ Cliquer pour lancer la vidéo</div>
 </div>
 
 <script>
-  const video = document.getElementById('video');
-  const overlay = document.getElementById('overlay');
+const v = document.getElementById("vid");
+const start = document.getElementById("start");
 
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    video.muted = false;
-    video.play();
-
-    // Redirection après clic (optionnel)
-    video.addEventListener('click', () => {
-      window.location.href = "https://www.zeyro.eus";
-    });
-  });
+start.onclick = () => {
+  start.style.display = "none";
+  v.muted = false;
+  v.play();
+};
 </script>
 
 </body>
