@@ -8,34 +8,28 @@
   <style>
     html, body {
       margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
       background: black;
       overflow: hidden;
     }
 
-    body {
-      display: flex;
-    }
-
-    a {
-      width: 100%;
-      height: 100%;
-      display: flex;
-    }
-
     img {
       width: 100vw;
       height: 100vh;
-      object-fit: contain;
+      object-fit: contain; /* garde les proportions */
       display: block;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
-  <a href="https://www.zeyro.eus" target="_blank">
-    <img src="https://nazey64210.github.io/Image/qqqqq.jpg?v=2" alt="Photo">
-  </a>
+  <img 
+    src="https://nazey64210.github.io/Image/qqqqq.jpg?v=4" 
+    alt="Photo"
+    onclick="window.location.href='https://www.zeyro.eus'"
+  >
 </body>
 </html>
