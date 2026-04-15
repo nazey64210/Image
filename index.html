@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidéo plein écran</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo plein écran</title>
 
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 20%;
-  background: black;
-  overflow: hidden;
-}
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
 
-.video-wrapper {
-  position: fixed;
-  inset: 0;
-}
+    .image-wrapper {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: black;
+    }
 
-video {
-  width: 100%;
-  height: 50%;
-  object-fit: contain; /* ✅ AUCUNE DÉFORMATION */
-  background: black;
-}
-
-#start {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,55,0.6);
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10;
-}
-</style>
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* garde l'image entière sans déformation */
+      display: block;
+      background: black;
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="video-wrapper">
-  <video id="vid" controls playsinline>
-    <source src="kkkkk.mp4" type="video/mp4">
-  </video>
-  <div id="start">▶ Cliquer pour lancer la vidéo</div>
-</div>
-
-<script>
-const v = document.getElementById("vid");
-const start = document.getElementById("start");
-
-start.onclick = () => {
-  start.style.display = "none";
-  v.muted = false;
-  v.play();
-};
-</script>
-
+  <div class="image-wrapper">
+    <img src="qqqqq.jpeg" alt="Photo" />
+  </div>
 </body>
 </html>
